@@ -10,11 +10,11 @@ ensure serrulata-NPCRobbery
 ```
 
 # Config
-![Serrulata](https://i,imgur.com/7QPjHcE.png)
+![Serrulata](https://i.imgur.com/7QPjHcE.png)
 
 # Dependencies (QBCore)
-* [cd_dispatch](https://forum.cfx.re/t/paid-codesign-police-dispatch/2007097)
-* [ps-dispatch](https://github.com/Project-Sloth/ps-dispatch)
+* [cd_dispatch](https://forum.cfx.re/t/paid-codesign-police-dispatch/2007097) (Optional) 
+* [ps-dispatch](https://github.com/Project-Sloth/ps-dispatch) (Optional) 
 
 # Preview 
 [Serrulata-WarehouseRobbery](https://streamable.com/pwlpmo) 
