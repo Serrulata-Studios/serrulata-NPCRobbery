@@ -10,7 +10,7 @@ ensure serrulata-NPCRobbery
 ```
 
 # Config
-![Serrulata](https://i.imgur.com/7QPjHcE.png)
+![Serrulata](https://i.imgur.com/Fow6UL6.png)
 
 # Dependencies (QBCore)
 * [cd_dispatch](https://forum.cfx.re/t/paid-codesign-police-dispatch/2007097) (Optional) 
