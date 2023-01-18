@@ -61,7 +61,7 @@ function rob(Ped)
 end
 
 function DispatchCalled()
-    if Config.dispatch == 'cd_dispatch' then
+    if Config.Dispatch == 'cd_dispatch' then
         local data = exports['cd_dispatch']:GetPlayerInfo()
         TriggerServerEvent('cd_dispatch:AddNotification', {
             job_table = {'police'}, 
