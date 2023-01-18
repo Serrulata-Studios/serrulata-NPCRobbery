@@ -17,7 +17,7 @@ ensure serrulata-NPCRobbery
 * [ps-dispatch](https://github.com/Project-Sloth/ps-dispatch) (Optional) 
 
 # Preview 
-[Serrulata-WarehouseRobbery](https://streamable.com/pwlpmo) 
+[Serrulata-NPCRobbery](https://streamable.com/pwlpmo) 
 
 # Discord
 [![](https://dcbadge.vercel.app/api/server/NerdvuJDX7)](https://discord.gg/NerdvuJDX7)
