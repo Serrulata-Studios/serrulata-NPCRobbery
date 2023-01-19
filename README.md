@@ -22,7 +22,7 @@ ensure serrulata-NPCRobbery
 # Discord
 [![](https://dcbadge.vercel.app/api/server/NerdvuJDX7)](https://discord.gg/NerdvuJDX7)
 
-Original Creator
+# Original Creator
 # [Mechomancer](https://github.com/Mechomancer/qb-robnpc/tree/main/qb-robnpc)
 
 # Developer's
