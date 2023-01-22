@@ -10,21 +10,27 @@ Citizen.CreateThread(function()
             local aiming, Ped = GetEntityPlayerIsFreeAimingAt(PlayerId(-1))
 
             if aiming then
-                local playerPed = GetPlayerPed(-1)
-                local pCoords = GetEntityCoords(playerPed, true)
-                local tCoords = GetEntityCoords(Ped, true)
+                QBCore.Functions.GetPlayerData(function(PlayerData)
+                  PlayerJob = PlayerData.job
+                    if PlayerData.job.name ~= "police" then
+                        local playerPed = GetPlayerPed(-1)
+                        local pCoords = GetEntityCoords(playerPed, true)
+                        local tCoords = GetEntityCoords(Ped, true)
 
-                if DoesEntityExist(Ped) and IsPedHuman(Ped) then
-                    if cooldown then
-                        QBCore.Functions.Notify("They seem to have no Money")
-                    elseif IsPedDeadOrDying(Ped, true) then
-                        QBCore.Functions.Notify("You trying to rob a dead person? Where is your morals")
-                    elseif GetDistanceBetweenCoords(pCoords.x, pCoords.y, pCoords.z, tCoords.x, tCoords.y, tCoords.z, true) >= Config.RobDistance then
-                        QBCore.Functions.Notify("You are to far away, they are not scared enough")
-                    else
-                        rob(Ped)
+                        if DoesEntityExist(Ped) and IsPedHuman(Ped) then
+                            if cooldown then
+                                QBCore.Functions.Notify("They seem to have no Money")
+                            elseif IsPedDeadOrDying(Ped, true) then
+                                QBCore.Functions.Notify("You trying to rob a dead person? Where is your morals")
+                            elseif GetDistanceBetweenCoords(pCoords.x, pCoords.y, pCoords.z, tCoords.x, tCoords.y, tCoords.z, true) >= Config.RobDistance then
+                                QBCore.Functions.Notify("You are to far away, they are not scared enough")
+                            else
+                                rob(Ped)
+                            end
+                        end               
+                    else 
                     end
-                end
+                end)
             end
         end
     end
@@ -39,9 +45,11 @@ function rob(Ped)
             Wait(10)
         end
         DispatchCalled()
-        FreezeEntityPosition(Ped, true)
         TaskStandStill(Ped, 9000)
+        FreezeEntityPosition(Ped, true)
+        TaskHandsUp(Ped , 9000, -1)
         TaskPlayAnim(Ped, dict, 'handsup_standing_base', 8.0, -8, .01, 49, 0, 0, 0, 0)
+        TaskStandStill(Ped, 9000)
         QBCore.Functions.Progressbar("Robbing", "Empty your pockets!", 9000, false, true, {
             disableMovement = false,
             disableCarMovement = true,
@@ -50,6 +58,7 @@ function rob(Ped)
         }, {
         }, {}, {}, function() -- Done
         end)
+        TaskPlayAnim(Ped, 'amb@world_human_bum_standing@depressed@idle_a', 'idle_a', 8.0, -8, .01, 10, 0, 0, 0, 0)
         Wait(9000)
         FreezeEntityPosition(Ped, false)
         TriggerServerEvent('serrulata:server:money', amount)
